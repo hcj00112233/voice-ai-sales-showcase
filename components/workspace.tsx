@@ -462,7 +462,7 @@ export default function Workspace({ initialSampleId }: { initialSampleId?: strin
               </span>
             </div>
             <div className="mode-switch" role="group" aria-label="Output mode">
-              {!staticDemo && <button
+              <button
                 className={mode === "sample" ? "selected" : ""}
                 aria-pressed={mode === "sample"}
                 onClick={() => selectMode("sample")}
@@ -470,8 +470,8 @@ export default function Workspace({ initialSampleId }: { initialSampleId?: strin
               >
                 <Flask size={14} />
                 Sample output mode
-              </button>}
-              <button
+              </button>
+              {!staticDemo && <button
                 className={mode === "live" ? "selected" : ""}
                 aria-pressed={mode === "live"}
                 onClick={() => selectMode("live")}
@@ -479,7 +479,7 @@ export default function Workspace({ initialSampleId }: { initialSampleId?: strin
               >
                 <Waveform size={14} />
                 Live AI mode
-              </button>
+              </button>}
             </div>
           </div>
           {!staticDemo && mode === "live" && (
